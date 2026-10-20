@@ -1,0 +1,42 @@
+Every hour search Kleinnzeigen for Certain terms you decide you are interested in.
+
+For each listing matching the search check the listing id in the website link against you database of listings. If its present ignore the listing and move onto the next.
+
+If it dosnt exist, create a new entry in the database for that listing and send a notification to the phone with a link to the site and exact listing.
+
+
+Desktop first
+Website routes:
+
+/ Display DesktopSite.png
+
+everything should be runing on this path
+
+Requests to server
+
+Gets:
+Get listing info
+
+Get Check Existing Entrys
+
+Get
+
+POSTs:
+Post New Entry Data
+
+General Functions needed:
+
+lookForListings()
+storeListingData()
+compareListingIDs()
+sendNotification()
+
+
+Logic:
+Every hour call lookForListings()
+
+for each listing call compareListingIDs()
+    if listing exists, skip
+    else:
+        storeListingData()
+        sendNotification()
